@@ -3,7 +3,7 @@ const searchOpacNamesByLabel = async (endpoint, itemLabel) => {
     // Parametri URL
     const params = new URLSearchParams({
         core: "autori",
-        "item%3A6003%3ANome": encodeURIComponent(itemLabel),
+        "item:6003:Nome": encodeURIComponent(itemLabel),
         "filter_nocheck:6021:Tipo_nome": "Persona:A"
     });
 
