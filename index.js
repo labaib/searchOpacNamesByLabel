@@ -21,7 +21,7 @@ const searchOpacNamesByLabel = async (itemLabel, endpoint = "opac.sbn.it") => {
 
         const opacResponse = await fetch(url);
         const opacJson = await opacResponse.json();
- 
+
         const resultList = opacJson.data.results.map((entity) => ({
             vid: entity[0].id.replace("ITICCU", ""),
             label: entity[0].label.replace(" , ", ", "),
