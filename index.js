@@ -5,7 +5,7 @@
 * @returns {Array<{vid: string, label: string, type: string}>|[]} - Ritorna un array di oggetti
 */
 
-const searchOpacNamesByLabel = async (itemLabel, endpoint) => {
+const searchOpacNamesByLabel = async (itemLabel, endpoint = "opac.sbn.it") => {
 
     // Parametri URL
     const params = new URLSearchParams({
