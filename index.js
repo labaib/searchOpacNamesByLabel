@@ -10,11 +10,10 @@ const searchOpacNamesByLabel = async (itemLabel, endpoint = "opac.sbn.it") => {
     // Parametri URL
     const params = new URLSearchParams({
         core: "autori",
-        "item%3A6003%3ANome": encodeURIComponent(itemLabel),
+        "item:6003:Nome": itemLabel,
         "filter_nocheck:6021:Tipo_nome": "Persona:A"
     });
 
-    
     try {
 
         // opac.sbn.it
@@ -27,7 +26,6 @@ const searchOpacNamesByLabel = async (itemLabel, endpoint = "opac.sbn.it") => {
             vid: entity[0].id.replace("ITICCU", ""),
             label: entity[0].label.replace(" , ", ", "),
             type: entity[3].contents[0].value
-
         }));
         
         if (resultList.length > 0) {
