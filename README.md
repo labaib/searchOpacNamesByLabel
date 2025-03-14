@@ -33,7 +33,7 @@ import { searchOpacNamesByLabel } from './js/searchOpacNamesByLabel.js';
  import { searchOpacNamesByLabel } from 'https://cdn.jsdelivr.net/gh/labaib/searchOpacNamesByLabel@main/index.js';
 
  (async () => {
-     const names = await searchOpacNamesByLabel("opac.sbn.it");
+     const names = await searchOpacNamesByLabel("Dante Alighieri");
  })();
 
 </script>
@@ -44,7 +44,7 @@ import { searchOpacNamesByLabel } from './js/searchOpacNamesByLabel.js';
   import { searchOpacNamesByLabel } from './js/searchOpacNamesByLabel.js';
 
   (async () => {
-    const names = await searchOpacNamesByLabel("opac.sbn.it");
+    const names = await searchOpacNamesByLabel("Dante Alighieri");
   })();
 
 </script>

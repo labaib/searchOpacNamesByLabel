@@ -1,4 +1,11 @@
-const searchOpacNamesByLabel = async (endpoint, itemLabel) => {
+/**
+* Ottieni lista Nomi da OPAC SBN tramite etichetta
+* @param {string} itemLabel - Etichetta entità da ricercare
+* @param {string} [endpoint="opac.sbn.it"] - opzionale
+* @returns {Array<{vid: string, label: string, type: string}>|[]} - Ritorna un array di oggetti
+*/
+
+const searchOpacNamesByLabel = async (itemLabel, endpoint) => {
 
     // Parametri URL
     const params = new URLSearchParams({
@@ -15,7 +22,13 @@ const searchOpacNamesByLabel = async (endpoint, itemLabel) => {
 
         const opacResponse = await fetch(url);
         const opacJson = await opacResponse.json();
-        const resultList = opacJson.data.results
+ 
+        const resultList = Promise.all(opacJson.data.results.map(async (entity) => ({
+            vid: entity[0].id.replace("ITICCU", ""),
+            label: entity[0].label.replace(" , ", ", "),
+            type: entity[3].contents[0].value
+
+        })));
         
         if (resultList.length > 0) {
             return resultList
