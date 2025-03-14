@@ -10,7 +10,7 @@ const searchOpacNamesByLabel = async (itemLabel, endpoint = "opac.sbn.it") => {
     // Parametri URL
     const params = new URLSearchParams({
         core: "autori",
-        "item:6003:Nome": encodeURIComponent(itemLabel),
+        "item%3A6003%3ANome": encodeURIComponent(itemLabel),
         "filter_nocheck:6021:Tipo_nome": "Persona:A"
     });
 
